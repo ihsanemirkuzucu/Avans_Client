@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\bin\Debug\net5.0\AvansProjeClient.ApiService.deps.json
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\bin\Debug\net5.0\AvansProjeClient.ApiService.dll
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\bin\Debug\net5.0\ref\AvansProjeClient.ApiService.dll
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\bin\Debug\net5.0\AvansProjeClient.ApiService.pdb
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\obj\Debug\net5.0\AvansProjeClient.ApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\obj\Debug\net5.0\AvansProjeClient.ApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\obj\Debug\net5.0\AvansProjeClient.ApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\obj\Debug\net5.0\AvansProjeClient.ApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\obj\Debug\net5.0\AvansProjeClient.ApiService.dll
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\obj\Debug\net5.0\ref\AvansProjeClient.ApiService.dll
+C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ApiService\obj\Debug\net5.0\AvansProjeClient.ApiService.pdb
