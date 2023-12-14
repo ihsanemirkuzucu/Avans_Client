@@ -9,3 +9,15 @@ C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ExceptionHa
 C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\AvansProjeClient.ExceptionHandling.dll
 C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\ref\AvansProjeClient.ExceptionHandling.dll
 C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\AvansProjeClient.ExceptionHandling.pdb
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\bin\Debug\net5.0\AvansProjeClient.ExceptionHandling.deps.json
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\bin\Debug\net5.0\AvansProjeClient.ExceptionHandling.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\bin\Debug\net5.0\ref\AvansProjeClient.ExceptionHandling.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\bin\Debug\net5.0\AvansProjeClient.ExceptionHandling.pdb
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\AvansProjeClient.ExceptionHandling.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\AvansProjeClient.ExceptionHandling.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\AvansProjeClient.ExceptionHandling.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\AvansProjeClient.ExceptionHandling.AssemblyInfo.cs
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\AvansProjeClient.ExceptionHandling.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\AvansProjeClient.ExceptionHandling.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\ref\AvansProjeClient.ExceptionHandling.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.ExceptionHandling\obj\Debug\net5.0\AvansProjeClient.ExceptionHandling.pdb

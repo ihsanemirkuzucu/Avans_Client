@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.34301.259
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansProjeClient.UI", "AvansProjeClient.UI\AvansProjeClient.UI.csproj", "{FB08C86C-92A4-4B78-BCD5-0D8951C1CEC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvansProjeClient.UI", "AvansProjeClient.UI\AvansProjeClient.UI.csproj", "{FB08C86C-92A4-4B78-BCD5-0D8951C1CEC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansProjeClient.Models", "AvansProjeClient.Models\AvansProjeClient.Models.csproj", "{118512B5-8A6C-4254-8507-05C3597707F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvansProjeClient.Models", "AvansProjeClient.Models\AvansProjeClient.Models.csproj", "{118512B5-8A6C-4254-8507-05C3597707F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansProjeClient.ApiService", "AvansProjeClient.ApiService\AvansProjeClient.ApiService.csproj", "{6941DF50-0A51-4AC2-857E-F853DA10C4D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvansProjeClient.ApiService", "AvansProjeClient.ApiService\AvansProjeClient.ApiService.csproj", "{6941DF50-0A51-4AC2-857E-F853DA10C4D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansProjeClient.ExceptionHandling", "AvansProjeClient.ExceptionHandling\AvansProjeClient.ExceptionHandling.csproj", "{01AE0E12-36E6-4760-970A-F20B9D8CD3AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvansProjeClient.ExceptionHandling", "AvansProjeClient.ExceptionHandling\AvansProjeClient.ExceptionHandling.csproj", "{01AE0E12-36E6-4760-970A-F20B9D8CD3AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansProjeClient.Validation", "AvansProjeClient.Validation\AvansProjeClient.Validation.csproj", "{366B9A45-8BE4-46DD-A073-2E94AEF79791}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvansProjeClient.Validation", "AvansProjeClient.Validation\AvansProjeClient.Validation.csproj", "{366B9A45-8BE4-46DD-A073-2E94AEF79791}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansProjeClient.Log", "AvansProjeClient.Log\AvansProjeClient.Log.csproj", "{967E08EA-703C-49CF-AED2-1E04AD0FF8CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvansProjeClient.Log", "AvansProjeClient.Log\AvansProjeClient.Log.csproj", "{967E08EA-703C-49CF-AED2-1E04AD0FF8CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvansProjeClient.BLL", "AvansProjeClient.BLL\AvansProjeClient.BLL.csproj", "{BD4C3076-26CD-4344-A0C8-F14833662C39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{967E08EA-703C-49CF-AED2-1E04AD0FF8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{967E08EA-703C-49CF-AED2-1E04AD0FF8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{967E08EA-703C-49CF-AED2-1E04AD0FF8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD4C3076-26CD-4344-A0C8-F14833662C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4C3076-26CD-4344-A0C8-F14833662C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4C3076-26CD-4344-A0C8-F14833662C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4C3076-26CD-4344-A0C8-F14833662C39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
