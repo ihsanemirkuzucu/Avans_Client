@@ -1,0 +1,57 @@
+﻿@model AvansProjeClient.Models.VM.AuthVMs.LoginVM
+@{
+    Layout = "_Login";
+}
+<html>
+<head>
+    <title>Giriş</title>
+</head>
+<body>
+    <div class="container mt-7">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div>
+                        <div>
+                            @if (!string.IsNullOrEmpty(ViewData["result"] as string))
+                            {
+                                <div class="alert alert-danger text-center" role="alert">
+                                    @ViewData["result"]
+                                </div>
+                            }
+                        </div>
+                        <div>
+                            @if (!string.IsNullOrEmpty(TempData["kullaniciDurumuOnay"] as string))
+                            {
+                                <div class="alert alert-success text-center" role="alert">
+                                    @TempData["kullaniciDurumuOnay"]
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <h2 class="text-center">Giriş Ekranı</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" asp-action="LoginAsync" asp-controller="Account">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mail</label>
+                                <input type="text" class="form-control" asp-for="WorkerEmail" placeholder="Mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Şifre</label>
+                                <input type="password" class="form-control" asp-for="Password" placeholder="Şifre">
+                            </div>
+                            <div class="text-right">
+                                <input type="submit" class="btn btn-primary" value="Giris Yap" />
+                                <a class="btn btn-secondary" asp-action="RegisterAsync" asp-controller="Account">Kayıt Ol</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -9,3 +9,15 @@ C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.Models\obj\
 C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\AvansProjeClient.Models.dll
 C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\ref\AvansProjeClient.Models.dll
 C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\AvansProjeClient.Models.pdb
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\bin\Debug\net5.0\AvansProjeClient.Models.deps.json
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\bin\Debug\net5.0\AvansProjeClient.Models.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\bin\Debug\net5.0\ref\AvansProjeClient.Models.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\bin\Debug\net5.0\AvansProjeClient.Models.pdb
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\AvansProjeClient.Models.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\AvansProjeClient.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\AvansProjeClient.Models.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\AvansProjeClient.Models.AssemblyInfo.cs
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\AvansProjeClient.Models.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\AvansProjeClient.Models.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\ref\AvansProjeClient.Models.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Models\obj\Debug\net5.0\AvansProjeClient.Models.pdb

@@ -9,3 +9,15 @@ C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.Log\obj\Deb
 C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\AvansProjeClient.Log.dll
 C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\ref\AvansProjeClient.Log.dll
 C:\Users\User\Desktop\Yeni klasör\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\AvansProjeClient.Log.pdb
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\bin\Debug\net5.0\AvansProjeClient.Log.deps.json
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\bin\Debug\net5.0\AvansProjeClient.Log.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\bin\Debug\net5.0\ref\AvansProjeClient.Log.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\bin\Debug\net5.0\AvansProjeClient.Log.pdb
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\AvansProjeClient.Log.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\AvansProjeClient.Log.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\AvansProjeClient.Log.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\AvansProjeClient.Log.AssemblyInfo.cs
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\AvansProjeClient.Log.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\AvansProjeClient.Log.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\ref\AvansProjeClient.Log.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Log\obj\Debug\net5.0\AvansProjeClient.Log.pdb

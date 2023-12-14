@@ -1,0 +1,14 @@
+{
+  "UserNotFound": "Kullanýcý bulunamadý.",
+  "PasswordError": "Þifre hatalýdýr.",
+  "SuccessfullLogin": "Giriþ baþarýlý.",
+  "UserAlreadyExists": "Kullanýcý mevcut.",
+  "UserRegisteredSuccess": "Kayýt baþarýlý.",
+  "LoginError": "Giriþ baþarýsýz.",
+  "RegisterError": "Kayýt baþarýsýz.",
+  "PasswordConfirmError": "Þifreler eþleþmiyor.",
+  "MailFormatError": "Email geçersiz formatta girildi.",
+  "LoginInputNullError": "Ýlgili alanlar doldurulmalýdýr.",
+  "GeneralSuccess": "Success",
+  "GeneralError": "Error"
+}
