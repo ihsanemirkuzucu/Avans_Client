@@ -1,0 +1,17 @@
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\bin\Debug\net5.0\AvansProjeClient.BLL.deps.json
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\bin\Debug\net5.0\AvansProjeClient.BLL.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\bin\Debug\net5.0\ref\AvansProjeClient.BLL.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\bin\Debug\net5.0\AvansProjeClient.BLL.pdb
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\bin\Debug\net5.0\AvansProjeClient.ApiService.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\bin\Debug\net5.0\AvansProjeClient.Models.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\bin\Debug\net5.0\AvansProjeClient.ApiService.pdb
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\bin\Debug\net5.0\AvansProjeClient.Models.pdb
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\obj\Debug\net5.0\AvansProjeClient.BLL.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\obj\Debug\net5.0\AvansProjeClient.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\obj\Debug\net5.0\AvansProjeClient.BLL.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\obj\Debug\net5.0\AvansProjeClient.BLL.AssemblyInfo.cs
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\obj\Debug\net5.0\AvansProjeClient.BLL.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\obj\Debug\net5.0\AvansProjeClient.BLL.csproj.CopyComplete
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\obj\Debug\net5.0\AvansProjeClient.BLL.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\obj\Debug\net5.0\ref\AvansProjeClient.BLL.dll
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.BLL\obj\Debug\net5.0\AvansProjeClient.BLL.pdb

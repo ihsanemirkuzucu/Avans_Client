@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Yeni klasör\\AvansProjeClient\\AvansProjeClient.Log\\AvansProjeClient.Log.csproj": {}
+    "C:\\Users\\User\\Desktop\\AvansProjeClient\\AvansProjeClient.Log\\AvansProjeClient.Log.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Yeni klasör\\AvansProjeClient\\AvansProjeClient.Log\\AvansProjeClient.Log.csproj": {
+    "C:\\Users\\User\\Desktop\\AvansProjeClient\\AvansProjeClient.Log\\AvansProjeClient.Log.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Yeni klasör\\AvansProjeClient\\AvansProjeClient.Log\\AvansProjeClient.Log.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\AvansProjeClient\\AvansProjeClient.Log\\AvansProjeClient.Log.csproj",
         "projectName": "AvansProjeClient.Log",
-        "projectPath": "C:\\Users\\User\\Desktop\\Yeni klasör\\AvansProjeClient\\AvansProjeClient.Log\\AvansProjeClient.Log.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\AvansProjeClient\\AvansProjeClient.Log\\AvansProjeClient.Log.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Yeni klasör\\AvansProjeClient\\AvansProjeClient.Log\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\AvansProjeClient\\AvansProjeClient.Log\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
