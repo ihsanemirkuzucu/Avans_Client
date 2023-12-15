@@ -21,19 +21,19 @@
                             }
                         </div>
                         <div>
-                            @if (!string.IsNullOrEmpty(TempData["kullaniciDurumuOnay"] as string))
+                            @if (!string.IsNullOrEmpty(TempData["workerStatusConfirm"] as string))
                             {
                                 <div class="alert alert-success text-center" role="alert">
-                                    @TempData["kullaniciDurumuOnay"]
+                                    @TempData["workerStatusConfirm"]
                                 </div>
                             }
                         </div>
                     </div>
                     <div class="card-header">
-                        <h2 class="text-center">Giriş Ekranı</h2>
+                        <h2 class="text-center">Giriş</h2>
                     </div>
                     <div class="card-body">
-                        <form method="post" asp-action="LoginAsync" asp-controller="Account">
+                        <form method="post" asp-action="Login" asp-controller="Auth">
                             @Html.AntiForgeryToken()
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Mail</label>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="text-right">
                                 <input type="submit" class="btn btn-primary" value="Giris Yap" />
-                                <a class="btn btn-secondary" asp-action="RegisterAsync" asp-controller="Account">Kayıt Ol</a>
+                                <a class="btn btn-secondary" asp-action="Register" asp-controller="Auth">Kayıt Ol</a>
                             </div>
                         </form>
                     </div>

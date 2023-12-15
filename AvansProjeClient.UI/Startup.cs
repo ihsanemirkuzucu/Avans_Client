@@ -7,6 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AvansProjeClient.ApiService.AuthApiService;
+using AvansProjeClient.ApiService.WorkerAPIService;
+using AvansProjeClient.BLL.Abstract;
+using AvansProjeClient.BLL.Concrete;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace AvansProjeClient.UI
 {
@@ -23,6 +28,39 @@ namespace AvansProjeClient.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddScoped<IWorkerBLL, WorkerBLL>();
+            services.AddScoped<IAuthBLL, AuthBLL>();
+
+            services.AddHttpClient<WorkerService>(conf =>
+            {
+                conf.BaseAddress = new Uri(Configuration["myBaseUri"]);
+            });
+            services.AddHttpClient<AuthService>(conf =>
+            {
+                conf.BaseAddress = new Uri(Configuration["myBaseUri"]);
+            });
+
+            services.AddAuthentication(a =>
+            {
+                a.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                a.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                a.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+            }).AddCookie(a =>
+            {
+                a.LoginPath = "/Auth/Login";
+                a.AccessDeniedPath = "/Auth/Login";
+                a.Cookie.Name = CookieAuthenticationDefaults.AuthenticationScheme;
+                a.Cookie.HttpOnly = true;
+            });
+            services.AddAuthorization(opt =>
+            {
+                opt.AddPolicy("Admin", policy =>
+                {
+                    policy.RequireRole("Admin");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +84,7 @@ namespace AvansProjeClient.UI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Auth}/{action=Login}/{id?}");
             });
         }
     }
