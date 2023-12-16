@@ -36,7 +36,6 @@ namespace AvansProjeClient.BLL.Concrete
                 if (result == null)
                 {
                     throw new Exception();
-
                 }
                 return new GeneralReturnType<LoginVM>(result, true, "Giriş Başarılı");
             }
