@@ -13,7 +13,6 @@ C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Validation\bin\Debug\net
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Validation\bin\Debug\net5.0\AvansProjeClient.Validation.dll
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Validation\bin\Debug\net5.0\ref\AvansProjeClient.Validation.dll
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Validation\bin\Debug\net5.0\AvansProjeClient.Validation.pdb
-C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Validation\obj\Debug\net5.0\AvansProjeClient.Validation.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Validation\obj\Debug\net5.0\AvansProjeClient.Validation.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Validation\obj\Debug\net5.0\AvansProjeClient.Validation.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.Validation\obj\Debug\net5.0\AvansProjeClient.Validation.AssemblyInfo.cs
