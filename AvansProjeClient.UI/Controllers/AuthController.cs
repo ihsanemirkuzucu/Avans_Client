@@ -14,11 +14,13 @@ namespace AvansProjeClient.UI.Controllers
 {
     public class AuthController : Controller
     {
-        IWorkerBLL _workerBLL;
+        IWorkerBLL _workerBLL; 
+        IAuthBLL _authBLL;
 
-        public AuthController(IWorkerBLL workerBll)
+        public AuthController(IWorkerBLL workerBll, IAuthBLL authBll)
         {
             _workerBLL = workerBll;
+            _authBLL = authBll;
         }
 
         [HttpGet]
@@ -58,6 +60,35 @@ namespace AvansProjeClient.UI.Controllers
             var userpri = new ClaimsPrincipal(userId);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userpri);
             return RedirectToAction("Index", "Home");
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Register()
+        {
+            var requireds = await _authBLL.GetRequiredDataAsync();
+            if (requireds.Success)
+            {
+                ViewData["Title"] = requireds.Data.Title;
+                ViewData["Unit"] = requireds.Data.Unit;
+                ViewData["Worker"] = requireds.Data.Worker;
+            }
+
+            return View(new RegisterVM());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterVM registerVM)
+        {
+            var result = await _workerBLL.RegisterAsync(registerVM);
+            if (!result.Success)
+            {
+                TempData["workerStatus"] = result.Message;
+                return View();
+            }
+            TempData["workerStatusConfirm"] = result.Message;
+            return RedirectToAction("Login", "Auth");
 
         }
     }

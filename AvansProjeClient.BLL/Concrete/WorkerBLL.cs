@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using AvansProjeClient.ApiService.WorkerAPIService;
 using AvansProjeClient.BLL.Abstract;
-using AvansProjeClient.BLL.ErrorMessages;
 using AvansProjeClient.BLL.MyExtensions;
 using AvansProjeClient.Models.GeneralReturn;
 using AvansProjeClient.Models.VM.AuthVMs;
@@ -27,18 +26,18 @@ namespace AvansProjeClient.BLL.Concrete
             {
                 if (!MyExtensionMethods.TextControl(loginVM.WorkerEmail, loginVM.Password))
                 {
-                    return new GeneralReturnType<LoginVM>(null, false, Messages.LoginInputNullError);
+                    return new GeneralReturnType<LoginVM>(null, false, "Email veya Password Doğru Doldurulamadı");
                 }
                 if (!MyExtensionMethods.IsEmailValid(loginVM.WorkerEmail))
                 {
-                    return new GeneralReturnType<LoginVM>(null, false, Messages.MailFormatError);
+                    return new GeneralReturnType<LoginVM>(null, false, "Email doğru formatta girilmedi");
                 }
                 var result = await _workerService.LoginAsync(loginVM);
                 if (result == null)
                 {
                     throw new Exception();
                 }
-                return new GeneralReturnType<LoginVM>(result, true, Messages.SuccessfullLogin);
+                return new GeneralReturnType<LoginVM>(result, true, "Giriş Başarılı");
             }
             catch (Exception ex)
             {
@@ -52,23 +51,23 @@ namespace AvansProjeClient.BLL.Concrete
             {
                 if (!MyExtensionMethods.TextControl(registerVM.WorkerEmail, registerVM.Password, registerVM.PasswordConfirm))
                 {
-                    return new GeneralReturnType<string>(null, false, Messages.LoginInputNullError);
+                    return new GeneralReturnType<string>(null, false, "Email veya Password Doğru Doldurulamadı");
                 }
                 if (!MyExtensionMethods.IsEmailValid(registerVM.WorkerEmail))
                 {
-                    return new GeneralReturnType<string>(null, false, Messages.MailFormatError);
+                    return new GeneralReturnType<string>(null, false, "Email doğru formatta girilmedi");
                 }
 
                 if (registerVM.Password != registerVM.PasswordConfirm)
                 {
-                    return new GeneralReturnType<string>(null, false, Messages.PasswordConfirmError);
+                    return new GeneralReturnType<string>(null, false, "Şifre Doğrulanamadı");
                 }
                 var result = await _workerService.RegisterAsync(registerVM);
                 if (result == null)
                 {
                     throw new Exception();
                 }
-                return new GeneralReturnType<string>(null, true, Messages.UserRegisteredSuccess);
+                return new GeneralReturnType<string>(null, true, "Başarılı Kayıt");
             }
             catch (Exception ex)
             {
