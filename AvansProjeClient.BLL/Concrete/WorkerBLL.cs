@@ -32,7 +32,6 @@ namespace AvansProjeClient.BLL.Concrete
                 {
                     return new GeneralReturnType<LoginVM>(null, false, "Email doğru formatta girilmedi");
                 }
-
                 var result = await _workerService.LoginAsync(loginVM);
                 if (result == null)
                 {
