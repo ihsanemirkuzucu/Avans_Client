@@ -1,0 +1,58 @@
+﻿@using AvansProjeClient.Models.VM.ProjectVMs
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "AddAdvance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var workerID = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    List<ProjectVM> projectList = (List<ProjectVM>)ViewData["projectList"];
+}
+
+@model AvansProjeClient.Models.VM.AdvanceVMs.AdvanceAddVM
+<div class="card border-primary mt-4">
+    <div>
+        @if (!string.IsNullOrEmpty(TempData["resultAdvance"] as string))
+        {
+            <div class="alert alert-primary text-center" role="alert">
+                @TempData["resultAdvance"]
+            </div>
+        }
+    </div>
+    <div class="card-header bg-primary text-white">
+        <h1 class="card-title">Avans Talebi Oluştur</h1>
+    </div>
+
+    <div class="card-body">
+        <form asp-action="AddAdvance" asp-controller="Advance" method="post">
+            <div class="mb-3">
+                <input type="hidden" asp-for="WorkerID" value="@workerID" class="form-control" placeholder="Avans istediğiniz tarihi giriniz.">
+            </div>
+
+            <div class="mb-3">
+                <label for="AdvanceAmount" class="form-label">İstenen Avans Miktarı</label>
+                <input type="text" asp-for="AdvanceAmount" class="form-control" placeholder="Avans miktarı giriniz">
+            </div>
+
+            <div class="mb-3">
+                <label for="AdvanceExplanation" class="form-label">Açıklama</label>
+                <input type="text" asp-for="AdvanceExplanation" class="form-control" placeholder="Açıklama giriniz.">
+            </div>
+
+            <div class="mb-3">
+                <label for="RequestDate" class="form-label">Avans İstenen Tarih</label>
+                <input type="date" asp-for="RequestDate" class="form-control" placeholder="Avans istediğiniz tarihi giriniz." min="@DateTime.Now.ToString("yyyy-MM-dd")">
+            </div>
+
+            <div class="mb-3">
+                <label for="ProjectID" class="form-label">Proje</label>
+                <select asp-for="ProjectID" class="form-select">
+                    <option value="0">Proje Seçiniz</option>
+                    @foreach (ProjectVM item in projectList)
+                    {
+                        <option value="@item.ProjectID">@item.ProjectName</option>
+                    }
+                </select>
+            </div>
+            <input type="submit" class="btn btn-outline-primary float-end" value="Avans Talep Et" />
+        </form>
+    </div>
+</div>

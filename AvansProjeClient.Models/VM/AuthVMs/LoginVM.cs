@@ -8,6 +8,7 @@ namespace AvansProjeClient.Models.VM.AuthVMs
 {
     public record LoginVM
     {
+        public int WorkerID { get; set; }
         public string WorkerEmail { get; set; }
         public string WorkerName { get; set; }
         public string Password { get; set; }

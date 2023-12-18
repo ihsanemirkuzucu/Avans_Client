@@ -1,0 +1,67 @@
+﻿@using AvansProjeClient.Models.VM.AdvanceVMs
+@{
+    List<AdvanceApproveListVM> advanceList = (List<AdvanceApproveListVM>)TempData["resultApproveList"];
+}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        background-color: white;
+    }
+
+    th {
+        background-color: whitesmoke;
+    }
+
+
+
+    .container {
+        padding: 16px;
+    }
+</style>
+
+<div class="container">
+    <h2 class="text-primary">Geçmiş Avans Taleplerim</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Çalışanın Adı</th>
+            <th scope="col">Ünvanı</th>
+            <th scope="col">Birimi</th>
+            <th scope="col">Talep Durumu</th>
+            <th scope="col">Talep Oluşturma Tarihi</th>
+            <th scope="col">Talep Tutarı</th>
+            <th scope="col">İstenilen Tarih</th>
+            <th scope="col">Proje Adı</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (advanceList != null)
+        {
+            @foreach (var item in advanceList)
+            {
+                <tr>
+                    <td>@item.WorkerName</td>
+                    <td>@item.TitleName</td>
+                    <td>@item.UnitName</td>
+                    <td>@item.ApprovalName</td>
+                    <td>@item.RequestDate.ToShortDateString()</td>
+                    <td>@item.AdvanceAmount</td>
+                    <td>@item.DesiredDate.ToShortDateString()</td>
+                    <td>@item.ProjectName</td>
+                    <td><a class="btn btn-outline-primary" asp-action="ResponseAdvanceApproveDetail" asp-controller="Advance" asp-route-advanceID="@item.AdvanceID">Yanıtla</a></td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>

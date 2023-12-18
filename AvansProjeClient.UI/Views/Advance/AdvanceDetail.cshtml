@@ -1,0 +1,86 @@
+﻿@using AvansProjeClient.Models.VM.AdvanceVMs
+@{
+    AdvanceDetailsVM data = (AdvanceDetailsVM)TempData["resultAdvanceDetail"];
+    var cardDetail = data.AdvanceDetail;
+    var historyList = data.AdvanceHistoryList;
+}
+<div class="container">
+    <div class="row">
+        <div class="card col-md-6 rounded-card">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Talep Oluşturma Tarihi:</h5>
+                <p class="card-text">@cardDetail.RequestDate.Value.ToShortDateString())</p>
+
+                <h5 class="card-title text-primary">Alınmak İstenen Tarih:</h5>
+                <p class="card-text">@cardDetail.DesiredDate.Value.ToShortDateString()</p>
+
+                <h5 class="card-title text-primary">Proje:</h5>
+                <p class="card-text">@cardDetail.ProjectName</p>
+
+                <h5 class="card-title text-primary">Açıklama:</h5>
+                <p class="card-text">@cardDetail.AdvanceExplanation</p>
+            </div>
+        </div>
+
+        <div class="card col-md-6 rounded-card">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Talep Edilen Tutar:</h5>
+                <p class="card-text">@cardDetail.AdvanceAmount</p>
+
+                <h5 class="card-title text-primary">Onaylanan Tutar:</h5>
+                <p class="card-text">@cardDetail.ApprovedAmount</p>
+
+                <h5 class="card-title text-primary">Son Durumu:</h5>
+                <p class="card-text">@cardDetail.ApprovalName</p>
+
+                <h5 class="card-title text-primary">Makbuz No:</h5>
+                <p class="card-text">@cardDetail.ReceiptNo</p>
+
+                <h5 class="card-title text-primary">Avans Geri Ödeme Durumu:</h5>
+                <p class="card-text">@cardDetail.PaybackStatus</p>
+            </div>
+        </div>
+
+        <div class="card col-md-12 mt-2">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Durum</th>
+                            <th scope="col">İşlem Zamanı</th>
+                            <th scope="col">İşlemi Yapan</th>
+                            <th scope="col">Sonraki Aşama Kullanıcısı</th>
+                            <th scope="col">Sonraki Durum</th>
+                            <th scope="col">Onaylanan Tutar</th>
+                            <th scope="col">Ödeme Yapılacak Tarih</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (AdvanceHistoryVM item in historyList)
+                        {
+                            <tr>
+                                <td>@item.ApprovalName</td>
+                                <td>
+                                    @if (item.ApprovedDeclinedDate != null)
+                                    {
+                                        @item.ApprovedDeclinedDate.Value.ToShortDateString()
+                                    }
+                                </td>
+                                <td>@item.ApprovedDeclinedName</td>
+                                <td>@item.NextApprovalName</td>
+                                <td>@item.NextApprovedDeclinedName</td>
+                                <td>@item.ApprovedAmount</td>
+                                <td>
+                                    @if (item.PaybackDate != null)
+                                    {
+                                        @item.PaybackDate.Value.ToShortDateString()
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

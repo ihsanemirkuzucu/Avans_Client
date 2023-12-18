@@ -6,30 +6,27 @@
 <head>
     <title>Giriş</title>
 </head>
-<body>
+<body class="bg-light">
     <div class="container mt-7">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
                     <div>
-                        <div>
-                            @if (!string.IsNullOrEmpty(ViewData["result"] as string))
-                            {
-                                <div class="alert alert-danger text-center" role="alert">
-                                    @ViewData["result"]
-                                </div>
-                            }
-                        </div>
-                        <div>
-                            @if (!string.IsNullOrEmpty(TempData["workerStatusConfirm"] as string))
-                            {
-                                <div class="alert alert-success text-center" role="alert">
-                                    @TempData["workerStatusConfirm"]
-                                </div>
-                            }
-                        </div>
+                        @if (!string.IsNullOrEmpty(ViewData["result"] as string))
+                        {
+                            <div class="alert alert-danger text-center" role="alert">
+                                @ViewData["result"]
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(TempData["workerStatusConfirm"] as string))
+                        {
+                            <div class="alert alert-success text-center" role="alert">
+                                @TempData["workerStatusConfirm"]
+                            </div>
+                        }
                     </div>
-                    <div class="card-header">
+                    <div class="card-header bg-primary text-white">
                         <h2 class="text-center">Giriş</h2>
                     </div>
                     <div class="card-body">
@@ -44,7 +41,7 @@
                                 <input type="password" class="form-control" asp-for="Password" placeholder="Şifre">
                             </div>
                             <div class="text-right">
-                                <input type="submit" class="btn btn-primary" value="Giris Yap" />
+                                <input type="submit" class="btn btn-primary" value="Giriş Yap" />
                                 <a class="btn btn-secondary" asp-action="Register" asp-controller="Auth">Kayıt Ol</a>
                             </div>
                         </form>

@@ -1,0 +1,63 @@
+﻿@using AvansProjeClient.Models.VM.AdvanceVMs
+@{
+    List<WorkerAdvanceListVM> advanceList = (List<WorkerAdvanceListVM>)TempData["resultAdvanceList"];
+}
+<div class="container">
+    <h2 class="text-primary">Geçmiş Avans Taleplerim</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Talep Tutarı</th>
+                <th scope="col">Talep Oluşturma Tarihi</th>
+                <th scope="col">İstenilen Tarih</th>
+                <th scope="col">Proje</th>
+                <th scope="col">Talep Durumu</th>
+                <th scope="col">Onaylayan/Reddeden</th>
+                <th scope="col">Onaylayan/Reddeden Ünvan</th>
+                <th scope="col">Onay/Red Tarihi</th>
+                <th scope="col">Onaylanan Tutar</th>
+                <th scope="col">Belirlenen Ödeme Tarihi</th>
+                <th scope="col">Ödeme Yapılan Tarih</th>
+                <th scope="col">Geri Ödeme Durumu</th>
+                <th scope="col">Detay</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (advanceList != null)
+            {
+                @foreach (WorkerAdvanceListVM item in advanceList)
+                {
+                    <tr>
+                        <td>@item.AdvanceAmount</td>
+                        <td>@item.RequestDate.ToShortDateString()</td>
+                        <td>@item.DesiredDate.ToShortDateString()</td>
+                        <td>@item.ProjectName</td>
+                        <td>@item.ApprovalName</td>
+                        <td>@item.ApprovalRejectedName</td>
+                        <td>@item.ApprovalRejectedTitle</td>
+                        <td>@if (item.ApprovedDeclinedDate != null)
+                        {@item.ApprovedDeclinedDate.Value.ToShortDateString()}</td>
+                        <td>@item.ApprovedAmount</td>
+                        <td>@if (item.DeterminedPaybackDate != null)
+                        {@item.DeterminedPaybackDate.Value.ToShortDateString()}</td>
+                        <td>@item.PaybackDate</td>
+                        <td>
+                            @if (item.PaybackDate != null)
+                            {
+                                <td>Ödendi</td>
+                            }
+                            else
+                            {
+                                <td>-</td>
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-primary" asp-action="AdvanceDetail" asp-controller="Advance" asp-route-advanceID="@item.AdvanceID">Detay Göster</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
