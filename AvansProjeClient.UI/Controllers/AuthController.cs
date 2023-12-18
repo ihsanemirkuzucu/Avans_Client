@@ -54,6 +54,7 @@ namespace AvansProjeClient.UI.Controllers
             var claims = new List<Claim>()
             {
                 new Claim(ClaimTypes.Name,result.Data.WorkerName),
+                new Claim(ClaimTypes.NameIdentifier, result.Data.WorkerID.ToString()),
                 new Claim(ClaimTypes.Role,result.Data.TitleName)
             };
             var userId = new ClaimsIdentity(claims, "login");

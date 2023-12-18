@@ -1,0 +1,42 @@
+﻿@using System.Security.Claims
+@using AvansProjeClient.Models.VM.AdvanceVMs
+@model AvansProjeClient.Models.VM.AdvanceVMs.AdvanceApproveStatusUpdate
+@{
+    AdvanceApproveVM data = (AdvanceApproveVM)TempData["advanceApproveDetail"];
+    int workerID = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+}
+<div class="container">
+    <div class="row">
+        <div class="card col-md-6 rounded-card bg-primary text-white">
+            <div class="card-body">
+                <strong>Çalışanın Adı:</strong> @data.WorkerName <br>
+                <strong>Unvanı:</strong> @data.TitleName <br>
+                <strong>Birimi:</strong> @data.UnitName <br>
+                <strong>Talep Oluşturma Tarihi:</strong> @data.RequestDate.Value.ToShortDateString() <br>
+                <strong>Alınmak İstenen Tarih:</strong> @data.DesiredDate.Value.ToShortDateString() <br>
+                <strong>Proje:</strong> @data.ProjectName
+            </div>
+        </div>
+        <div class="card col-md-6 rounded-card bg-primary text-white">
+            <div class="card-body">
+                <strong>Talep Edilen Tutar:</strong> @data.AdvanceAmount <br>
+                <strong>Onaylanan Tutar:</strong> @data.ApprovedAmount <br>
+                <strong>Son Durumu:</strong> @data.ApprovalName
+            </div>
+        </div>
+        <form class="col-md-6 mx-md-auto">
+            <div class="card rounded-card bg-primary text-white">
+                <div class="card-body">
+                    <label>Uygun Görülen Tutar</label>
+                    <input type="number" asp-for="ApprovedAmount" class="form-control" />
+                    <input type="hidden" asp-for="AdvanceID" value="@data.AdvanceID" />
+                    <input type="hidden" asp-for="ApproverOrRejecterID" value="@workerID" />
+                </div>
+                <div class="card-body approval-buttons">
+                    <a class="btn btn-outline-danger" asp-action="RejectAdvance" asp-controller="Advance">Red</a>
+                    <input type="submit" class="btn btn-success" asp-action="ApproveAdvance" asp-controller="Advance" value="Onay" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AvansProjeClient.ApiService.AdvanceApiService;
 using AvansProjeClient.ApiService.AuthApiService;
 using AvansProjeClient.ApiService.WorkerAPIService;
 using AvansProjeClient.BLL.Abstract;
@@ -31,12 +32,17 @@ namespace AvansProjeClient.UI
 
             services.AddScoped<IWorkerBLL, WorkerBLL>();
             services.AddScoped<IAuthBLL, AuthBLL>();
+            services.AddScoped<IAdvanceBLL, AdvanceBLL>();
 
             services.AddHttpClient<WorkerService>(conf =>
             {
                 conf.BaseAddress = new Uri(Configuration["myBaseUri"]);
             });
             services.AddHttpClient<AuthService>(conf =>
+            {
+                conf.BaseAddress = new Uri(Configuration["myBaseUri"]);
+            });
+            services.AddHttpClient<AdvanceService>(conf =>
             {
                 conf.BaseAddress = new Uri(Configuration["myBaseUri"]);
             });
@@ -78,7 +84,10 @@ namespace AvansProjeClient.UI
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+           
 
             app.UseEndpoints(endpoints =>
             {
