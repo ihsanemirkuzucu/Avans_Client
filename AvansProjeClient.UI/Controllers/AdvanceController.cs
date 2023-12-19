@@ -5,15 +5,18 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AvansProjeClient.BLL.Abstract;
+using AvansProjeClient.Models.GeneralReturn;
 using AvansProjeClient.Models.VM.AdvanceVMs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AvansProjeClient.UI.Controllers
 {
+    [Authorize]
     public class AdvanceController : Controller
     {
         private IAdvanceBLL _advanceBLL;
 
-        public AdvanceController(IAdvanceBLL advanceBll)
+        public AdvanceController(IAdvanceBLL advanceBll )
         {
             _advanceBLL = advanceBll;
         }
@@ -31,7 +34,8 @@ namespace AvansProjeClient.UI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddAdvance(AdvanceAddVM advanceAddVM)
         {
-            var result = await _advanceBLL.AdvanceAddAsync(advanceAddVM);
+            var token = HttpContext.Request.Cookies["token"];
+            var result = await _advanceBLL.AdvanceAddAsync(advanceAddVM, token);
             if (!result.Success)
             {
                 TempData["resultAdvance"] = result.Data;
@@ -45,7 +49,8 @@ namespace AvansProjeClient.UI.Controllers
         [HttpGet]
         public async Task<IActionResult> AdvanceDetail(int advanceID)
         {
-            var result = await _advanceBLL.GetAdvanceDetailsAsync(advanceID);
+            var token = HttpContext.Request.Cookies["token"];
+            var result = await _advanceBLL.GetAdvanceDetailsAsync(advanceID, token);
             TempData["resultAdvanceDetail"] = result.Data;
             return View();
         }
@@ -54,7 +59,8 @@ namespace AvansProjeClient.UI.Controllers
         [HttpGet]
         public async Task<IActionResult> WorkerAdvanceHistory()
         {
-            var result = await _advanceBLL.GetWorkerAdvanceListAsync(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value));
+            var token = HttpContext.Request.Cookies["token"];
+            var result = await _advanceBLL.GetWorkerAdvanceListAsync(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value), token);
 
             TempData["resultAdvanceList"] = result.Data;
 
@@ -64,7 +70,16 @@ namespace AvansProjeClient.UI.Controllers
         [HttpGet]
         public async Task<IActionResult> ResponseAdvanceApproveDetail(int advanceID)
         {
-            var result = await _advanceBLL.GetAdvanceApproveDetailsAsync(advanceID);
+            GeneralReturnType<AdvanceApproveVM> result = null;
+
+            var token = HttpContext.Request.Cookies["token"];
+            if (User.FindFirst(ClaimTypes.Role)?.Value != "Ön Muhasebe")
+            {
+                result = await _advanceBLL.GetAdvanceApproveDetailsAsync(advanceID, token);
+                TempData["advanceApproveDetail"] = result.Data;
+                return View();
+            }
+            result = await _advanceBLL.GetAdvanceApproveDetailsAsync(advanceID, token);
             TempData["advanceApproveDetail"] = result.Data;
             return View();
         }
@@ -72,8 +87,47 @@ namespace AvansProjeClient.UI.Controllers
         [HttpGet]
         public async Task<IActionResult> AdvanceApprove()
         {
-            var result = await _advanceBLL.GetAdvanceApproveListByWorkerIDAsync(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value));
+            var token = HttpContext.Request.Cookies["token"];
+            var result = await _advanceBLL.GetAdvanceApproveListByWorkerIDAsync(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value), token);
             TempData["resultApproveList"] = result.Data;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ApproveAdvance(AdvanceApproveStatusUpdateVM advanceApproveStatusUpdateVM)
+        {
+            var token = HttpContext.Request.Cookies["token"];
+            var result = await _advanceBLL.ApproveAdvanceAsync(advanceApproveStatusUpdateVM, token);
+            TempData["resultApprove"] = result.Data;
+            if (!result.Success)
+            {
+                return RedirectToAction("ResponseAdvanceApproveDetail", new { advanceID = advanceApproveStatusUpdateVM.AdvanceID });
+            }
+
+            return RedirectToAction("AdvanceApprove");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DetermineAdvanceDate(AdvanceApproveStatusUpdateVM advanceApproveStatusUpdateVM)
+        {
+            var token = HttpContext.Request.Cookies["token"];
+
+            var result = await _advanceBLL.DetermineAdvanceDateAsync(advanceApproveStatusUpdateVM, token);
+            TempData["resultApprove"] = result.Data;
+            if (!result.Success)
+            {
+                return RedirectToAction("ResponseAdvanceApproveDetail", new { advanceID = advanceApproveStatusUpdateVM.AdvanceID });
+            }
+
+            return RedirectToAction("AdvanceApprove");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AdvancePayment()
+        {
+            var token = HttpContext.Request.Cookies["token"];
+            var result = await _advanceBLL.GetAdvancePaymentListAsync(token);
+            TempData["resultAdvancePaynemt"] = result.Data;
             return View();
         }
 

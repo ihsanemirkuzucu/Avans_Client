@@ -1,9 +1,10 @@
 ﻿@using System.Security.Claims
 @using AvansProjeClient.Models.VM.AdvanceVMs
-@model AvansProjeClient.Models.VM.AdvanceVMs.AdvanceApproveStatusUpdate
+@model AvansProjeClient.Models.VM.AdvanceVMs.AdvanceApproveStatusUpdateVM
 @{
     AdvanceApproveVM data = (AdvanceApproveVM)TempData["advanceApproveDetail"];
     int workerID = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+    var title = User.FindFirst(ClaimTypes.Role)?.Value;
 }
 <div class="container">
     <div class="row">
@@ -24,19 +25,69 @@
                 <strong>Son Durumu:</strong> @data.ApprovalName
             </div>
         </div>
-        <form class="col-md-6 mx-md-auto">
-            <div class="card rounded-card bg-primary text-white">
-                <div class="card-body">
-                    <label>Uygun Görülen Tutar</label>
-                    <input type="number" asp-for="ApprovedAmount" class="form-control" />
-                    <input type="hidden" asp-for="AdvanceID" value="@data.AdvanceID" />
-                    <input type="hidden" asp-for="ApproverOrRejecterID" value="@workerID" />
+        <div>
+            @if (title != "FM" && title != "Ön Muhasebe")
+            {
+                <div class="card col-md-6 mx-md-auto rounded-card">
+                    <form method="post">
+
+                        <div class="card-body">
+
+                            <label>Uygun Görülen Tutar</label>
+                            <input type="number" asp-for="ApprovedAmount" />
+                            <input type="hidden" asp-for="AdvanceID" value="@data.AdvanceID" />
+                            <input type="hidden" asp-for="ApproverOrRejecterID" value="@workerID" />
+                            <input type="hidden" asp-for="ApproveAdvanceStatusID" value="@data.ApproveStatusID" />
+                        </div>
+                        <div class="card-body approval-buttons">
+                            <input type="submit" class="btn btn-danger" asp-action="RejectAdvance" asp-controller="Advance" value="Red" />
+                            <input type="submit" class="btn btn-success" asp-action="ApproveAdvance" asp-controller="Advance" value="Onay" />
+                        </div>
+                    </form>
                 </div>
-                <div class="card-body approval-buttons">
-                    <a class="btn btn-outline-danger" asp-action="RejectAdvance" asp-controller="Advance">Red</a>
-                    <input type="submit" class="btn btn-success" asp-action="ApproveAdvance" asp-controller="Advance" value="Onay" />
+            }
+
+            else if (title == "FM")
+            {
+                <div class="card col-md-6 mx-md-auto rounded-card">
+                    <form method="post">
+
+                        <div class="card-body">
+
+                            <label >Avansın ödeneceği tarihi seçiniz.</label>
+                            <input type="date" asp-for="DeterminedAdvanceDate" class="form-control" placeholder="Avansın ödeneceği tarihi seçiniz." min="@DateTime.Now.ToString("yyyy-MM-dd")">
+                            <input type="hidden" asp-for="AdvanceID" value="@data.AdvanceID" />
+                            <input type="hidden" asp-for="ApproverOrRejecterID" value="@workerID" />
+                            <input type="hidden" asp-for="ApproveAdvanceStatusID" value="@data.ApproveStatusID" />
+                            <input type="hidden" asp-for="ApprovedAmount" value="@data.ApprovedAmount" />
+                        </div>
+                        <div class="card-body approval-buttons">
+                            <input type="submit" class="btn btn-success" asp-action="DetermineAdvanceDate" asp-controller="Advance" value="Kaydet" />
+                        </div>
+                    </form>
                 </div>
-            </div>
-        </form>
+
+            }
+
+            else if (title == "Ön Muhasebe")
+            {
+                <div class="card col-md-6 mx-md-auto rounded-card">
+                    <form method="post">
+
+                        <div class="card-body">
+
+                            <label>Makbuz No:</label>
+                            <input type="number" asp-for="ApprovedAmount" />
+                            <input type="hidden" asp-for="AdvanceID" value="@data.AdvanceID" />
+                            <input type="hidden" asp-for="ApproverOrRejecterID" value="@workerID" />
+                            <input type="hidden" asp-for="ApproveAdvanceStatusID" value="@data.ApproveStatusID" />
+                        </div>
+                        <div class="card-body approval-buttons">
+                            <input type="submit" class="btn btn-success" asp-action="AdvancePay" asp-controller="Advance" value="Öde" />
+                        </div>
+                    </form>
+                </div>
+            }
+        </div>
     </div>
 </div>

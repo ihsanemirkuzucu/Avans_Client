@@ -20,11 +20,11 @@ namespace AvansProjeClient.BLL.Concrete
             _api = api;
         }
 
-        public async Task<GeneralReturnType<List<AdvanceApproveListVM>>> GetAdvanceApproveListByWorkerIDAsync(int workerID)
+        public async Task<GeneralReturnType<List<AdvanceApproveListVM>>> GetAdvanceApproveListByWorkerIDAsync(int workerID, string token)
         {
             try
             {
-                return new GeneralReturnType<List<AdvanceApproveListVM>>(await _api.AdvanceApproveListByWorkerIDAsync(workerID), true, "Onay Listesi Getirildi");
+                return new GeneralReturnType<List<AdvanceApproveListVM>>(await _api.AdvanceApproveListByWorkerIDAsync(workerID, token), true, "Onay Listesi Getirildi");
             }
             catch (Exception ex)
             {
@@ -32,11 +32,11 @@ namespace AvansProjeClient.BLL.Concrete
             }
         }
 
-        public async Task<GeneralReturnType<List<WorkerAdvanceListVM>>> GetWorkerAdvanceListAsync(int workerID)
+        public async Task<GeneralReturnType<List<WorkerAdvanceListVM>>> GetWorkerAdvanceListAsync(int workerID, string token)
         {
             try
             {
-                return new GeneralReturnType<List<WorkerAdvanceListVM>>(await _api.WorkerAdvanceListAsync(workerID), true, "Çalışan Avanas Listesi Getirildi");
+                return new GeneralReturnType<List<WorkerAdvanceListVM>>(await _api.WorkerAdvanceListAsync(workerID, token), true, "Çalışan Avanas Listesi Getirildi");
             }
             catch (Exception ex)
             {
@@ -44,11 +44,11 @@ namespace AvansProjeClient.BLL.Concrete
             }
         }
 
-        public async Task<GeneralReturnType<AdvanceDetailsVM>> GetAdvanceDetailsAsync(int advanceID)
+        public async Task<GeneralReturnType<AdvanceDetailsVM>> GetAdvanceDetailsAsync(int advanceID, string token)
         {
             try
             {
-                return new GeneralReturnType<AdvanceDetailsVM>(await _api.AdvanceDetailsAsync(advanceID), true, "Avans Detayları Getirildi");
+                return new GeneralReturnType<AdvanceDetailsVM>(await _api.AdvanceDetailsAsync(advanceID, token), true, "Avans Detayları Getirildi");
             }
             catch (Exception ex)
             {
@@ -56,11 +56,11 @@ namespace AvansProjeClient.BLL.Concrete
             }
         }
 
-        public async Task<GeneralReturnType<AdvanceApproveVM>> GetAdvanceApproveDetailsAsync(int advanceID)
+        public async Task<GeneralReturnType<AdvanceApproveVM>> GetAdvanceApproveDetailsAsync(int advanceID, string token)
         {
             try
             {
-                return new GeneralReturnType<AdvanceApproveVM>(await _api.AdvanceApproveDetailsAsync(advanceID), true,"Avans Detayları Getirildi");
+                return new GeneralReturnType<AdvanceApproveVM>(await _api.AdvanceApproveDetailsAsync(advanceID, token), true,"Avans Detayları Getirildi");
             }
             catch (Exception ex)
             {
@@ -68,11 +68,11 @@ namespace AvansProjeClient.BLL.Concrete
             }
         }
 
-        public async Task<GeneralReturnType<string>> AdvanceAddAsync(AdvanceAddVM advanceAddVM)
+        public async Task<GeneralReturnType<string>> AdvanceAddAsync(AdvanceAddVM advanceAddVM, string token)
         {
             try
             {
-                return new GeneralReturnType<string>(await _api.AdvanceAddAsync(advanceAddVM), true, "Avans Talebi Eklendi");
+                return new GeneralReturnType<string>(await _api.AdvanceAddAsync(advanceAddVM, token), true, "Avans Talebi Eklendi");
             }
             catch (Exception ex)
             {
@@ -101,6 +101,88 @@ namespace AvansProjeClient.BLL.Concrete
             catch (Exception ex)
             {
                 return new GeneralReturnType<List<ProjectVM>>(null, true, "Çalışanın Projeleri Getirilemedi");
+            }
+        }
+
+
+        public async Task<GeneralReturnType<List<AdvancePaymentVM>>> GetAdvancePaymentListAsync(string token)
+        {
+            try
+            {
+                return new GeneralReturnType<List<AdvancePaymentVM>>(await _api.GetAdvancePaymentListAsync(token), true, "Avans Ödeme Bilgileri Getirildi");
+            }
+            catch (Exception ex)
+            {
+                return new GeneralReturnType<List<AdvancePaymentVM>>(null, false, "Avans Ödeme Bilgileri Getirilemedi");
+            }
+        }
+
+        public async Task<GeneralReturnType<AdvanceApproveVM>> GetAdvancePaymentDetailsAsync(int advanceID, string token)
+        {
+            try
+            {
+                return new GeneralReturnType<AdvanceApproveVM>(await _api.AdvancePaymentDetailsAsync(advanceID, token), true, "Avans Ödeme Detayları Getirildi");
+            }
+            catch (Exception ex)
+            {
+                return new GeneralReturnType<AdvanceApproveVM>(null, false, "Avans Ödeme Detayları Getirilelemedi" +ex.Message);
+            }
+        }
+
+        public async Task<GeneralReturnType<string>> ApproveAdvanceAsync(AdvanceApproveStatusUpdateVM advanceApproveStatusUpdateVM, string token)
+        {
+            try
+            {
+                if (advanceApproveStatusUpdateVM.ApprovedAmount <= 0)
+                {
+                    throw new Exception("Onaylanacak Tutar 0'dan Küçük Olamaz");
+                }
+                var result = await _api.ApproveAdvaceAsync(advanceApproveStatusUpdateVM, token);
+                if (result != "Avans Onaylandı.")
+                {
+                    throw new Exception(result);
+                }
+                return new GeneralReturnType<string>(result, true, "Başarılı");
+            }
+            catch (Exception ex)
+            {
+                return new GeneralReturnType<string>(ex.Message, false, "Başarısız");
+            }
+        }
+
+        public async Task<GeneralReturnType<string>> RejectAdvanceAsync(AdvanceApproveStatusUpdateVM advanceApproveStatusUpdateVM, string token)
+        {
+            try
+            {
+
+                var result = await _api.RejectAdvanceAsync(advanceApproveStatusUpdateVM, token);
+                if (result != "Avans Reddedildi.")
+                {
+                    throw new Exception(result);
+                }
+                return new GeneralReturnType<string>(result, true, "Başarılı");
+            }
+            catch (Exception ex)
+            {
+                return new GeneralReturnType<string>(ex.Message, false, "Başarısız");
+            }
+        }
+
+        public async Task<GeneralReturnType<string>> DetermineAdvanceDateAsync(AdvanceApproveStatusUpdateVM advanceApproveStatusUpdateVM, string token)
+        {
+            try
+            {
+
+                var result = await _api.DetermineAdvanceDateAsync(advanceApproveStatusUpdateVM, token);
+                if (result != "Avans Tarihi Belirlendi.")
+                {
+                    throw new Exception(result);
+                }
+                return new GeneralReturnType<string>(result, true, "Başarılı");
+            }
+            catch (Exception ex)
+            {
+                return new GeneralReturnType<string>(ex.Message, false, "Başarısız");
             }
         }
     }

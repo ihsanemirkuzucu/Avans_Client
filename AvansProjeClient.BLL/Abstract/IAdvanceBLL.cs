@@ -11,12 +11,18 @@ namespace AvansProjeClient.BLL.Abstract
 {
     public interface IAdvanceBLL
     {
-        Task<GeneralReturnType<List<AdvanceApproveListVM>>> GetAdvanceApproveListByWorkerIDAsync(int workerID);
-        Task<GeneralReturnType<List<WorkerAdvanceListVM>>> GetWorkerAdvanceListAsync(int workerID);
-        Task<GeneralReturnType<AdvanceDetailsVM>> GetAdvanceDetailsAsync(int advanceID);
-        Task<GeneralReturnType<AdvanceApproveVM>> GetAdvanceApproveDetailsAsync(int advanceID);
-        Task<GeneralReturnType<string>> AdvanceAddAsync(AdvanceAddVM advanceAddVM);
+        Task<GeneralReturnType<List<AdvanceApproveListVM>>> GetAdvanceApproveListByWorkerIDAsync(int workerID, string token);
+        Task<GeneralReturnType<List<WorkerAdvanceListVM>>> GetWorkerAdvanceListAsync(int workerID, string token);
+        Task<GeneralReturnType<AdvanceDetailsVM>> GetAdvanceDetailsAsync(int advanceID, string token);
+        Task<GeneralReturnType<AdvanceApproveVM>> GetAdvanceApproveDetailsAsync(int advanceID, string token);
+        Task<GeneralReturnType<string>> AdvanceAddAsync(AdvanceAddVM advanceAddVM, string token);
         Task<GeneralReturnType<List<ProjectVM>>> GetAllProjectAsync();
         Task<GeneralReturnType<List<ProjectVM>>> GetAllProjectsByWorkerIDAsync(int id);
+
+        Task<GeneralReturnType<List<AdvancePaymentVM>>> GetAdvancePaymentListAsync(string token);
+        Task<GeneralReturnType<AdvanceApproveVM>> GetAdvancePaymentDetailsAsync(int advanceID, string token);
+        Task<GeneralReturnType<string>> ApproveAdvanceAsync(AdvanceApproveStatusUpdateVM advanceApproveStatusUpdateVM, string token);
+        Task<GeneralReturnType<string>> RejectAdvanceAsync(AdvanceApproveStatusUpdateVM advanceApproveStatusUpdateVM, string token);
+        Task<GeneralReturnType<string>> DetermineAdvanceDateAsync(AdvanceApproveStatusUpdateVM advanceApproveStatusUpdateVM, string token);
     }
 }
