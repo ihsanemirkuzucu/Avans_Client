@@ -86,7 +86,7 @@ namespace AvansProjeClient.UI.Controllers
             if (!result.Success)
             {
                 TempData["workerStatus"] = result.Message;
-                return View();
+                return RedirectToAction("Register", "Auth");
             }
             TempData["workerStatusConfirm"] = result.Message;
             return RedirectToAction("Login", "Auth");
