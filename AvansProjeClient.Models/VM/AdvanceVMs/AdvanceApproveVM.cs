@@ -18,5 +18,6 @@ namespace AvansProjeClient.Models.VM.AdvanceVMs
         public decimal AdvanceAmount { get; set; }
         public decimal ApprovedAmount { get; set; }
         public string ProjectName { get; set; }
+        public int ApproveStatusID { get; set; }
     }
 }

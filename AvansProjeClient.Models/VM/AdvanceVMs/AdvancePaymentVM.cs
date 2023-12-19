@@ -6,17 +6,24 @@ using System.Threading.Tasks;
 
 namespace AvansProjeClient.Models.VM.AdvanceVMs
 {
-    public record AdvanceApproveListVM
+    public record AdvancePaymentVM
     {
         public int AdvanceID { get; set; }
         public string WorkerName { get; set; }
         public string TitleName { get; set; }
         public string UnitName { get; set; }
-        public string ApprovalName { get; set; }
+        public decimal AdvanceAmount { get; set; }
         public DateTime RequestDate { get; set; }
         public DateTime DesiredDate { get; set; }
-        public decimal AdvanceAmount { get; set; }
         public string ProjectName { get; set; }
+        public string ApprovalName { get; set; }
+        public string ApproveRecejtedName { get; set; }
+        public string ApproveRecejtedTitle { get; set; }
+        public DateTime ApproveDeclinedDate { get; set; }
+        public decimal ApprovedAmount { get; set; }
+        public DateTime DeterminedAdvanceDate { get; set; }
+        public DateTime? PaymentDate { get; set; }
+        public bool PaybackStatus { get; set; }
         public int ApproveStatusID { get; set; }
     }
 }

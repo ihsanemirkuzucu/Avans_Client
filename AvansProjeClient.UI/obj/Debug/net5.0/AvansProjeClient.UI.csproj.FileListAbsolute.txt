@@ -70,6 +70,12 @@ C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\scop
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\AvansProjeClient.UI.TagHelpers.input.cache
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\AvansProjeClient.UI.TagHelpers.output.cache
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\AvansProjeClient.UI.RazorCoreGenerate.cache
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\AddAdvance.cshtml.g.cs
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\AdvanceApprove.cshtml.g.cs
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\AdvanceDetail.cshtml.g.cs
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\AdvancePayment.cshtml.g.cs
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\ResponseAdvanceApproveDetail.cshtml.g.cs
+C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\WorkerAdvanceHistory.cshtml.g.cs
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Auth\Login.cshtml.g.cs
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Auth\Register.cshtml.g.cs
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
@@ -88,8 +94,3 @@ C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Avan
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\ref\AvansProjeClient.UI.dll
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\AvansProjeClient.UI.pdb
 C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\AvansProjeClient.UI.genruntimeconfig.cache
-C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\AddAdvance.cshtml.g.cs
-C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\AdvanceApprove.cshtml.g.cs
-C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\AdvanceDetail.cshtml.g.cs
-C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\ResponseAdvanceApproveDetail.cshtml.g.cs
-C:\Users\User\Desktop\AvansProjeClient\AvansProjeClient.UI\obj\Debug\net5.0\Razor\Views\Advance\WorkerAdvanceHistory.cshtml.g.cs
